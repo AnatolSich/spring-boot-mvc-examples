@@ -1,5 +1,6 @@
 # Getting Started
 
+http://localhost:8080/home
 ### Reference Documentation
 For further reference, please consider the following sections:
 
