@@ -25,10 +25,11 @@ public class LoginController {
         return "search";
     }
 
-    @ExceptionHandler(ApplicationException.class)
+    //This ExceptionHandler has more priority then global
+/*    @ExceptionHandler(ApplicationException.class)
     public String handleException() {
         System.out.println("in exception handler of Login Controller");
         return "error";
-    }
+    }*/
 }
 
