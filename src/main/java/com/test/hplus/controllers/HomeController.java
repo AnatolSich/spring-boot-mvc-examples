@@ -36,7 +36,7 @@ public class HomeController {
         return "register";
     }
 
-    //Default objects attached JSP pages
+   /* //Default objects attached JSP pages
     @ModelAttribute("newUser")
     public User getDefaultUser() {
         return new User();
@@ -50,5 +50,5 @@ public class HomeController {
     @ModelAttribute("login")
     public Login getDefaultLogin() {
         return new Login();
-    }
+    }*/
 }
