@@ -6,7 +6,7 @@
 
     <!-- bean definitions here -->
 
-    <bean id="index" class="org.springframework.web.servlet.view.JstlView">
+<!--    <bean id="index" class="org.springframework.web.servlet.view.JstlView">
         <property name="url" value="/WEB-INF/jsp/index.jsp"/>
     </bean>
 
@@ -20,5 +20,5 @@
 
     <bean id="login" class="org.springframework.web.servlet.view.JstlView">
         <property name="url" value="/WEB-INF/jsp/login.jsp"/>
-    </bean>
+    </bean>-->
 </beans>
