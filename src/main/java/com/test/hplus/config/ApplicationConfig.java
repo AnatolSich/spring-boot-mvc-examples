@@ -26,27 +26,32 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
     }
 
     // InternalResourceViewResolver implementation
-/*    @Bean
+    //Only resolves error page
+    @Bean
     public InternalResourceViewResolver jspViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/jsp/");
         viewResolver.setSuffix(".jsp");
         viewResolver.setViewClass(JstlView.class);
+        viewResolver.setOrder(3);
         return viewResolver;
-    }*/
+    }
 
     // XmlViewResolver implementation
-/*    @Bean
+    @Bean
     public XmlViewResolver xmlViewResolver() {
         XmlViewResolver viewResolver = new XmlViewResolver();
         viewResolver.setLocation(new ClassPathResource("views.xml"));
+        viewResolver.setOrder(1);
         return viewResolver;
-    }*/
+    }
 
+    // ResourceBundleViewResolver implementation
     @Bean
-    public ResourceBundleViewResolver resourceBundleViewResolver(){
+    public ResourceBundleViewResolver resourceBundleViewResolver() {
         ResourceBundleViewResolver viewResolver = new ResourceBundleViewResolver();
         viewResolver.setBasename("views");
+        viewResolver.setOrder(2);
         return viewResolver;
     }
 
