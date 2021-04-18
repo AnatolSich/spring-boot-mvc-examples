@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="<spring:theme code='styleSheet'/>" type="text/css"/>
+<!-- <link rel="stylesheet" href="css/style.css"> -->
 <meta charset="ISO-8859-1">
 <title>Hplus</title>
 </head>
