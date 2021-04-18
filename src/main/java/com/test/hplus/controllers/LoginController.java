@@ -6,11 +6,13 @@ import com.test.hplus.exceptions.ApplicationException;
 import com.test.hplus.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+//Model with name "login" will be stored to session
+//Model with this name defined in ControllerAdvice
+//If not - need to create method which return model with this name
+@SessionAttributes("login")
 public class LoginController {
 
     @Autowired
@@ -22,7 +24,7 @@ public class LoginController {
         if (user == null) {
             throw new ApplicationException("User not found");
         }
-        return "search";
+        return "forward:/userProfile";
     }
 
     //This ExceptionHandler has more priority then global

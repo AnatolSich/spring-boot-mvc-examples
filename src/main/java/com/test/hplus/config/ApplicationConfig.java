@@ -28,7 +28,7 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
     }
 
     // InternalResourceViewResolver implementation
-    //Only resolves error page
+    //Only resolves error page and profile page
     @Bean
     public InternalResourceViewResolver jspViewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
