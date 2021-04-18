@@ -18,9 +18,9 @@
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
-					<li><a href="/home">home</a></li>
-					<li><a href="/goToSearch">search</a></li>
-					<li><a href="/redirectToLinkedIn">linkedIn</a></li>
+                <li><a href="/home"><spring:message code="label.home"/></a></li>
+                <li><a href="/goToSearch"><spring:message code="label.search"/></a></li>
+                <li><a href="/redirectToLinkedIn"><spring:message code="label.linkedin"/></a></li>
 				</ul>
 				<!-- navbar -->
 			</div>
