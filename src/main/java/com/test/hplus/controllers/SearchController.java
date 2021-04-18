@@ -12,6 +12,7 @@ import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -26,7 +27,10 @@ public class SearchController {
     private AsyncTaskExecutor taskExecutor;
 
     @GetMapping("/search")
-    public DeferredResult<String> search(@RequestParam("search") String search, Model model, HttpServletRequest request) {
+    public DeferredResult<String> search(
+            @RequestParam("search") String search,
+            Model model, HttpServletRequest request,
+            HttpSession session) {
         DeferredResult<String> deferredResult = new DeferredResult<>();
         System.out.println("in search controller");
         System.out.println("search criteria: " + search);
@@ -42,13 +46,19 @@ public class SearchController {
             System.out.println("Thread from the spring mvc task executor: " + Thread.currentThread().getName());
             List<Product> products = new ArrayList<>();
             products = productRepository.searchByName(search);
+
+            try {
+                Product productForAdvertising = (Product) session.getAttribute("productForAdvertising");
+                products.add(productForAdvertising);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             model.addAttribute("products", products);
             deferredResult.setResult("search");
         });
         return deferredResult;
     }
-
-
 
   /*  @GetMapping("/search")
     public Callable<String> search(@RequestParam("search") String search, Model model, HttpServletRequest request) {

@@ -21,6 +21,8 @@ public class LoggingInterceptor implements HandlerInterceptor {
 
         String sessionId = null;
 
+        // browser in incognito mode send no predefined session
+        //normally - there is session
         if (null != request.getCookies()) {
             for (Cookie cookie : request.getCookies()) {
                 if ("JSESSIONID".equals(cookie.getName())) {
